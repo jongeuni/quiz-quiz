@@ -3,15 +3,8 @@ package com.dsm.quiz;
 import com.dsm.quiz.entity.Quiz;
 import com.dsm.quiz.repository.QuizRepository;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-
-import java.util.List;
 
 @SpringBootTest
 public class QuizRepositoryTests {
@@ -19,9 +12,9 @@ public class QuizRepositoryTests {
     QuizRepository quizRepository;
 
     @Test
-    public void randomPostTest(){
+    public void randomQuizTest(){
         int num = 3;
-        List<Quiz> quiz = quizRepository.randomQuiz(num);
+        quizRepository.randomQuiz(num);
     }
 
     @Test
