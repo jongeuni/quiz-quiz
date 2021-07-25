@@ -1,5 +1,4 @@
-server:
-  port: 8000
+
 
 admin:
   id: ${ADMIN_ID:}
