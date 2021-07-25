@@ -1,9 +1,5 @@
 server:
   port: 8000
-  
-java:
-  runtime:
-    version: 11
 
 admin:
   id: ${ADMIN_ID:}
