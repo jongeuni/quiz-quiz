@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar quiz.jar
+web: java $JAVA_OPTS -jar app.jar
