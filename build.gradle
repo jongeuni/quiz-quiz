@@ -29,11 +29,11 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
-
-task stage(type: Copy, dependsOn: [clean, build]) {
-	from jar.archiveFile
-	into project.rootDir
-	rename {
-		'app.jar'
-	}
-}
+//
+//task stage(type: Copy, dependsOn: [clean, build]) {
+//	from jar.archiveFile
+//	into project.rootDir
+//	rename {
+//		'app.jar'
+//	}
+//}
