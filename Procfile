@@ -1,1 +1,1 @@
-web: java -Spring.server.port=8000 $JAVA_OPTS -jar app.jar
+web: java -Spring.server.port=8000 $JAVA_OPTS -jar quiz.jar
