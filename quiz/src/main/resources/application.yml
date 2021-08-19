@@ -1,6 +1,3 @@
-server:
-  port: 8000
-
 admin:
   id: ${ADMIN_ID:}
   pw: ${ADMIN_PW:}

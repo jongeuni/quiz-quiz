@@ -27,10 +27,10 @@ public class AdminController {
     @PostMapping("/admin")
     public String login(@RequestBody LoginRequest user){
         System.out.println(user.getId());
-        if(adminService.login(user)){
+        if(adminService.login(user)){ // 로그인 성공
             return "thymeleaf/main";
         }
-        return "thymeleaf/login";
+        return "thymeleaf/login"; // 로그인 실패
     }
 
     @GetMapping("/quiz-page")
