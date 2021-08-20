@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_app/model/model_quiz.dart';
+import 'package:flutter_app/screen/screen_home.dart';
 
 class ResultScreen extends StatelessWidget{
   List<int> answers;
@@ -80,12 +81,40 @@ class ResultScreen extends StatelessWidget{
                     padding: EdgeInsets.all(width * 0.012)
                   )
                 ],
-              )
-              )
+              ),
+              ),
+              // 홈으로 돌아가기 버튼
+              Expanded(child: Container(),
+              ),
+              Container(
+                padding: EdgeInsets.only(bottom: width * 0.048),
+                child: ButtonTheme(
+                  minWidth: width * 0.73,
+                  height: height * 0.05,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: ElevatedButton(onPressed:(){
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return HomeScreen();
+                    }));
+                  },
+                  child: Text('홈으로 돌아가기',
+                    style: TextStyle(
+                      color: Colors.deepPurple,
+                      fontWeight: FontWeight.bold
+                      ),
+                  ),
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white),
+                    ),
+                  ),
+                ), 
+              ),
             ],
-          )
-        )
-      )
+          ),
+        ),
+      ),
     ),
     );
   }
