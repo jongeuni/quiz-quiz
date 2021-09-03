@@ -23,18 +23,18 @@ class ResultScreen extends StatelessWidget{
 
     return SafeArea(child: Scaffold(
       appBar: AppBar(
-        title: Text('My Quiz APP'),
-        backgroundColor: Colors.deepPurple,
+        title: Text('Quiz-quiz ✦‿✦'),
+        backgroundColor: Color(0xffBDB2FF),
         leading: Container(),
       ),
       body: Center(
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: Colors.deepPurple),
-            color: Colors.deepPurple,
+            border: Border.all(color: Color(0xffBDB2FF)),
+            color: Color(0xffBDB2FF),
           ),
-          width: width * 0.85,
+          width: width * 0.9,
           height: height * 0.5,
           child: Column(
             children: <Widget>[
@@ -43,18 +43,18 @@ class ResultScreen extends StatelessWidget{
               ),
               Container(decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Colors.deepPurple),
+                border: Border.all(color: Color(0xffBDB2FF)),
                 color: Colors.white,
               ),
-              width: width *0.73,
-              height: height * 0.25,
+              width: width *0.8,
+              height: height * 0.3,
               child: Column(
                 children: <Widget>[
                   Container(
                     padding: EdgeInsets.fromLTRB(
                         0, width * 0.048, 0, width * 0.012),
                     child: Text(
-                      '수고하셨습니다.',
+                      '수고하셨습니다~',
                       style: TextStyle(
                           fontSize: width * 0.055,
                           fontWeight: FontWeight.bold,
@@ -62,7 +62,7 @@ class ResultScreen extends StatelessWidget{
                       ),
                   ),
                   Text('당신의 점수는', style: TextStyle(
-                    fontSize: width * 0.048,
+                    fontSize: width * 0.053, height: height * 0.003,
                     fontWeight: FontWeight.bold,
                   ),
                   ),
@@ -74,7 +74,7 @@ class ResultScreen extends StatelessWidget{
                     style: TextStyle(
                       fontSize: width * 0.15,
                       fontWeight: FontWeight.bold,
-                      color: Colors.red,
+                      color: Color(0xffA0C4FF),
                     ),
                   ),
                   Padding(

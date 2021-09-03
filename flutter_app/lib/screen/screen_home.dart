@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen>{
           key: _scaffoldKey,
           appBar: AppBar(
             title: Text('Quiz-quiz!'),
-            backgroundColor: Colors.deepPurple,
+            backgroundColor: Color(0xffBDB2FF),
             leading: Container(),
           ),
           body:Column(
@@ -78,24 +78,24 @@ class _HomeScreenState extends State<HomeScreen>{
                 padding: EdgeInsets.all(width * 0.024),
               ),
               Text(
-                '퀴즈 앱',
+                'Quiz-Quiz',
                 style: TextStyle(
-                  fontSize: width *0.065,
+                  fontSize: width *0.068,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
-                '퀴즈를 풀기 전 안내사항입니다.\n꼼꼼히 읽고 퀴즈 풀기를 눌러주세요.',
+                '퀴즈를 풀기 전 안내사항입니다.\n퀴즈 풀기를 눌러주세요.',
                 textAlign: TextAlign.center,
               ),
               Padding(
-                padding: EdgeInsets.all(width*0.048),
+                padding: EdgeInsets.all(width*0.04),
               ),
               _buildStep(width, '1. 랜덤으로 나오는 퀴즈 3개를 풀어보세요.'),
               _buildStep(width, '2. 문제를 잘 읽고 정답을 고른 뒤 다음 문제 버튼을 \n눌러주세요.'),
-              _buildStep(width, '3. 만점을 향해 도전해보세요'),
+              _buildStep(width, '3. 세 문제를 다 풀 때까지 나갈 수 없습니다. 파이팅.'),
               Padding(
-                padding: EdgeInsets.all(width * 0.048),
+                padding: EdgeInsets.all(width * 0.03),
               ),
               Container(
                 padding: EdgeInsets.only(left: width * 0.036),
@@ -111,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen>{
                           style: TextStyle(color: Colors.white),
                         ),
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(Colors.deepPurple),
+                          backgroundColor: MaterialStateProperty.all(Color(0xffBDB2FF)),
                         ),
                         onPressed: () {
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(

@@ -6,6 +6,7 @@ import 'package:flutter_app/screen/screen_result.dart';
 import 'package:flutter_app/widget/widget_candidate.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
+@immutable
 class QuizScreen extends StatefulWidget{
   List<Quiz> quizs;
   QuizScreen({this.quizs});
@@ -25,15 +26,15 @@ class _QuizScreenState extends State<QuizScreen>{
     double width = screenSize.width;
     double height = screenSize.height;
     return SafeArea(child: Scaffold(
-      backgroundColor: Colors.deepPurple,
+      backgroundColor: Color(0xffBDB2FF),
       body: Center(
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: Colors.deepPurple),
+            border: Border.all(color: Color(0xffBDB2FF)),
           ),
-          width: width*0.7,
-          height: height * 0.58,
+          width: width*0.8,
+          height: height * 0.6,
           child: Swiper(
             controller: _controller,
             physics: NeverScrollableScrollPhysics(),
@@ -99,7 +100,7 @@ class _QuizScreenState extends State<QuizScreen>{
                       ? Text('결과보기')
                       : Text('다음문제'),
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.deepPurple, // background
+                    primary: Color(0xffBDB2FF), // background
                     onPrimary: Colors.white, // text color
                   ),
                   onPressed: _answers[_currentIndex]==-1 ? null : (){
