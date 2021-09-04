@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/model/api_adapter.dart';
 import 'package:flutter_app/model/model_quiz.dart';
 import 'package:flutter_app/screen/quiz.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class HomeScreen extends StatefulWidget{
   @override
@@ -9,23 +12,42 @@ class HomeScreen extends StatefulWidget{
 }
 
 class _HomeScreenState extends State<HomeScreen>{
-  List<Quiz> quizs = [
-    Quiz.fromMap({
-      'title': 'test',
-      'candidates': ['a','b','c','d'],
-      'answer':0
-    }),
-    Quiz.fromMap({
-      'title': 'test',
-      'candidates': ['a','b','c','d'],
-      'answer':0
-    }),
-    Quiz.fromMap({
-      'title': 'test',
-      'candidates': ['a','b','c','d'],
-      'answer':0
-    }),
-  ];
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  List<Quiz> quizs = [];
+  bool isLoading = false;
+
+  _fetchQuizs() async {
+    setState(() {
+      isLoading = true;
+    });
+    final response = await http.get(Uri.parse('https://drf-quiz-test.herokuapp.com/quiz/3/'));
+    if(response.statusCode == 200){
+      setState(() {
+        quizs = parseQuizs(utf8.decode(response.bodyBytes));
+        isLoading = false;
+      });
+    } else {
+      throw Exception('failed to load data');
+    }
+  }
+
+  // List<Quiz> quizs = [
+  //   Quiz.fromMap({
+  //     'title': 'test',
+  //     'candidates': ['a','b','c','d'],
+  //     'answer':0
+  //   }),
+  //   Quiz.fromMap({
+  //     'title': 'test',
+  //     'candidates': ['a','b','c','d'],
+  //     'answer':0
+  //   }),
+  //   Quiz.fromMap({
+  //     'title': 'test',
+  //     'candidates': ['a','b','c','d'],
+  //     'answer':0
+  //   }),
+  // ];
 
 
   @override
@@ -33,9 +55,10 @@ class _HomeScreenState extends State<HomeScreen>{
     Size screenSize = MediaQuery.of(context).size;
     double width = screenSize.width;
     double height = screenSize.height;
-    
+
     return SafeArea(
         child: Scaffold(
+          key: _scaffoldKey,
           appBar: AppBar(
             title: Text('Quiz-quiz!'),
             backgroundColor: Colors.deepPurple,
@@ -90,13 +113,27 @@ class _HomeScreenState extends State<HomeScreen>{
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(Colors.deepPurple),
                         ),
-                        onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(
-                              builder: (context) => QuizScreen(
-                                  quizs: quizs,
+                        onPressed: () {
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Row(
+                                children: <Widget>[
+                                  CircularProgressIndicator(),
+                                  Padding(padding: EdgeInsets.only(left:width*0.036),
+                                  ),
+                                  Text('로딩 중....')
+                                ],
                               ),
-                          ),
-                          );
+                          ));
+                          _fetchQuizs().whenComplete(() {
+                            return Navigator.push(
+                              context, MaterialPageRoute(
+                              builder: (context) =>
+                                  QuizScreen(
+                                    quizs: quizs,
+                                  ),
+                            ),
+                            );
+                          });
                         },
                     ),
                   ),

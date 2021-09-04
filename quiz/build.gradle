@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.dsm'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '8'
 
 repositories {
 	mavenCentral()
@@ -28,4 +28,15 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+task stage(type: Copy, dependsOn: [clean, build]) {
+	from jar.archiveFile
+	into project.rootDir
+	rename {
+		'quiz.jar'
+	}
+	stage.mustRunAfter(clean {
+		project.file('quiz.jar').delete()
+	})
 }
