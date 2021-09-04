@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -25,12 +26,11 @@ public class AdminController {
     }
 
     @PostMapping("/admin")
-    public String login(@RequestBody LoginRequest user){
-        System.out.println(user.getId());
-        if(adminService.login(user)){
+    public String login(HttpServletRequest request){
+        if(adminService.login(request.getParameter("id"), request.getParameter("pw"))){ // 로그인 성공
             return "thymeleaf/main";
         }
-        return "thymeleaf/login";
+        return "thymeleaf/login"; // 로그인 실패
     }
 
     @GetMapping("/quiz-page")

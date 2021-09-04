@@ -19,8 +19,8 @@ public class AdminService {
     private String pw;
     private final QuizRepository quizRepository;
 
-    public boolean login(LoginRequest loginReq){
-        return loginReq.getId().equals(id) && loginReq.getPw().equals(pw);
+    public boolean login(String id, String pw){
+        return id.equals(this.id) && pw.equals(this.pw);
     }
 
     public void insertQuiz(Quiz quiz){
