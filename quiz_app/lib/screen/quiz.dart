@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/model/model_quiz.dart';
@@ -14,7 +15,48 @@ class QuizScreen extends StatefulWidget{
   _QuizScreenState createState() => _QuizScreenState();
 }
 
+class _main extends State<QuizScreen>{
+  int _selecetdIndex = 0;
+
+  List _selectedMenu = [
+    Text('View 1'),
+    Text('View 2'),
+  ];
+
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      bottomNavigationBar: buildCurvedNavigationBar(),
+      body: Container(
+        child: _selectedMenu.elementAt(_selecetdIndex),
+        ),
+    );
+  }
+}
+CurvedNavigationBar buildCurvedNavigationBar(){
+  return CurvedNavigationBar(
+    index: 0,
+    height: 50,
+    backgroundColor: Colors.transparent,
+    buttonBackgroundColor: Color(0XFFCFD8DC),
+    color: Colors.black.withOpacity(0.2),
+    animationDuration: const Duration(milliseconds: 150),
+    animationCurve: Curves.easeInOutQuart,
+    onTap: (index){
+    },
+    items: [
+      Icon(Icons.home, size: 24, color: Colors.orange),
+      Icon(Icons.directions_car, size: 24, color: Colors.orange)
+    ] 
+    );
+}
+
 class _QuizScreenState extends State<QuizScreen>{
+  int _selecetdIndex = 0;
+  List _selectedMenu = [
+    Text('View 1'),
+    Text('View 2'),
+  ];
   List<int> _answers = [-1,-1,-1];
   List<bool> _answerState = [false, false, false, false];
   int _currentIndex = 0;
@@ -25,7 +67,10 @@ class _QuizScreenState extends State<QuizScreen>{
     Size screenSize = MediaQuery.of(context).size;
     double width = screenSize.width;
     double height = screenSize.height;
-    return SafeArea(child: Scaffold(
+    return SafeArea(
+      
+      child: Scaffold(
+      bottomNavigationBar: buildCurvedNavigationBar(),
       backgroundColor: Color(0xffBDB2FF),
       body: Center(
         child: Container(
