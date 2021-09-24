@@ -38,15 +38,15 @@ CurvedNavigationBar buildCurvedNavigationBar(){
     index: 0,
     height: 50,
     backgroundColor: Colors.transparent,
-    buttonBackgroundColor: Color(0XFFCFD8DC),
-    color: Colors.black.withOpacity(0.2),
+    buttonBackgroundColor: Color(0XFFFFFF),
+    color: Color(0xffF7E3EF),
     animationDuration: const Duration(milliseconds: 150),
     animationCurve: Curves.easeInOutQuart,
     onTap: (index){
     },
     items: [
-      Icon(Icons.home, size: 24, color: Colors.orange),
-      Icon(Icons.directions_car, size: 24, color: Colors.orange)
+      Icon(Icons.quiz, size: 24, color: Color(0xffD5CFF5)),
+      Icon(Icons.account_box, size: 24, color: Color(0xffD5CFF5))
     ] 
     );
 }
@@ -70,7 +70,6 @@ class _QuizScreenState extends State<QuizScreen>{
     return SafeArea(
       
       child: Scaffold(
-      bottomNavigationBar: buildCurvedNavigationBar(),
       backgroundColor: Color(0xffBDB2FF),
       body: Center(
         child: Container(

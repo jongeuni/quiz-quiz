@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/model/api_adapter.dart';
@@ -49,6 +50,23 @@ class _HomeScreenState extends State<HomeScreen>{
   //   }),
   // ];
 
+CurvedNavigationBar buildCurvedNavigationBar(){
+  return CurvedNavigationBar(
+    index: 0,
+    height: 50,
+    backgroundColor: Colors.transparent,
+    buttonBackgroundColor: Color(0XFFFFFF),
+    color: Color(0xffF7E3EF),
+    animationDuration: const Duration(milliseconds: 150),
+    animationCurve: Curves.easeInOutQuart,
+    onTap: (index){
+    },
+    items: [
+      Icon(Icons.quiz, size: 24, color: Color(0xffD5CFF5)),
+      Icon(Icons.account_box, size: 24, color: Color(0xffD5CFF5))
+    ] 
+    );
+}
 
   @override
   Widget build(BuildContext){
@@ -58,6 +76,7 @@ class _HomeScreenState extends State<HomeScreen>{
 
     return SafeArea(
         child: Scaffold(
+          bottomNavigationBar: buildCurvedNavigationBar(),
           key: _scaffoldKey,
           appBar: AppBar(
             title: Text('Quiz-quiz!'),
@@ -145,6 +164,8 @@ class _HomeScreenState extends State<HomeScreen>{
     );
   }
 
+  
+
   Widget _buildStep(double width, String title){
     return Container(
       padding: EdgeInsets.fromLTRB(
@@ -169,3 +190,4 @@ class _HomeScreenState extends State<HomeScreen>{
     );
   }
 }
+
