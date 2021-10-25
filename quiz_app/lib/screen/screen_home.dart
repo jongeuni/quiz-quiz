@@ -1,3 +1,4 @@
+
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -60,6 +61,9 @@ CurvedNavigationBar buildCurvedNavigationBar(){
     animationDuration: const Duration(milliseconds: 150),
     animationCurve: Curves.easeInOutQuart,
     onTap: (index){
+      setState(() {
+  
+      });
     },
     items: [
       Icon(Icons.quiz, size: 24, color: Color(0xffD5CFF5)),
@@ -68,7 +72,7 @@ CurvedNavigationBar buildCurvedNavigationBar(){
     );
 }
 
-  @override
+@override
   Widget build(BuildContext){
     Size screenSize = MediaQuery.of(context).size;
     double width = screenSize.width;
@@ -190,4 +194,3 @@ CurvedNavigationBar buildCurvedNavigationBar(){
     );
   }
 }
-

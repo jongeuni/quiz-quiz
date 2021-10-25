@@ -1,5 +1,4 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/model/model_quiz.dart';
@@ -15,6 +14,7 @@ class QuizScreen extends StatefulWidget{
   _QuizScreenState createState() => _QuizScreenState();
 }
 
+/*
 class _main extends State<QuizScreen>{
   int _selecetdIndex = 0;
 
@@ -33,23 +33,7 @@ class _main extends State<QuizScreen>{
     );
   }
 }
-CurvedNavigationBar buildCurvedNavigationBar(){
-  return CurvedNavigationBar(
-    index: 0,
-    height: 50,
-    backgroundColor: Colors.transparent,
-    buttonBackgroundColor: Color(0XFFFFFF),
-    color: Color(0xffF7E3EF),
-    animationDuration: const Duration(milliseconds: 150),
-    animationCurve: Curves.easeInOutQuart,
-    onTap: (index){
-    },
-    items: [
-      Icon(Icons.quiz, size: 24, color: Color(0xffD5CFF5)),
-      Icon(Icons.account_box, size: 24, color: Color(0xffD5CFF5))
-    ] 
-    );
-}
+*/
 
 class _QuizScreenState extends State<QuizScreen>{
   int _selecetdIndex = 0;
