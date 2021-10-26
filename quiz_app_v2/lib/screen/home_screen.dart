@@ -13,8 +13,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _State extends State<HomeScreen> {
-  final _valueList = ['동물','노래','영화','기타'];
-  var _selectedValue = '기타';
+  
 
   void _onTap(int index){
     setState((){
