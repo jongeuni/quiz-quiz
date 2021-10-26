@@ -17,7 +17,6 @@ class _State extends State<HomeScreen> {
   var _selectedValue = '기타';
 
   void _onTap(int index){
-    print(index);
     setState((){
       _currentIndex = index;
     });
@@ -29,8 +28,6 @@ class _State extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print(_currentIndex);
-    print(_children[_currentIndex].toString());
     return Scaffold(
       
       body: _children[_currentIndex],
@@ -44,14 +41,14 @@ CurvedNavigationBar buildCurvedNavigationBar(){
     index: 0,
     height: 50,
     backgroundColor: Colors.transparent,
-    buttonBackgroundColor: Color(0XFFFFFF),
-    color: Color(0xffF7E3EF),
+    buttonBackgroundColor: const Color(0x00ffffff),
+    color: const Color(0xffF7E3EF),
     animationDuration: const Duration(milliseconds: 150),
     animationCurve: Curves.easeInOutQuart,
     onTap: _onTap,
-    items: [
-      Icon(Icons.quiz, size: 24, color: Color(0xffD5CFF5)),
-      Icon(Icons.account_box, size: 24, color: Color(0xffD5CFF5))
+    items: const [
+      Icon(Icons.quiz, color: Color(0xffD5CFF5)),
+      Icon(Icons.account_box, color: Color(0xffD5CFF5))
     ] 
     );
 }
