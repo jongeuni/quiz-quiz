@@ -30,8 +30,10 @@ class _QuizMainPageState extends State<QuizMainPage> {
             },
           ).toList(),
           onChanged: (value){
-            print(value);
-            _selectedValue = value.toString();
+            setState(() {
+              _selectedValue = value.toString();
+            });
+            
           },)
     
       //bottomNavigationBar: buildCurvedNavigationBar(),
