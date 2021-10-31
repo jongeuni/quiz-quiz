@@ -22,7 +22,7 @@ class _State extends State<HomeScreen> {
   }
 
   int _currentIndex = 0;
-  final List<Widget> _children = [Chocie(),MyPage()];
+  final List<Widget> _children = [QuizMainPage(),MyPage()];
 
 
   @override

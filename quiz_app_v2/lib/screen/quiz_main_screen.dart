@@ -4,7 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screen/home_screen.dart';
 
 
-class Chocie extends StatelessWidget {
+class QuizMainPage extends StatefulWidget {
+  const QuizMainPage({Key? key}): super(key: key);
+  @override
+  _QuizMainPageState createState() => _QuizMainPageState();
+}
+
+class _QuizMainPageState extends State<QuizMainPage> {
+  
+  
   final _valueList = ['동물','노래','영화','기타'];
   var _selectedValue = '기타';
   @override
@@ -22,6 +30,8 @@ class Chocie extends StatelessWidget {
             },
           ).toList(),
           onChanged: (value){
+            print(value);
+            _selectedValue = value.toString();
           },)
     
       //bottomNavigationBar: buildCurvedNavigationBar(),
