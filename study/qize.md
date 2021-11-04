@@ -268,3 +268,6 @@ shape도 설정해준다. <?
 ButtonTheme의 child에 RaisedButton을 넣는다고 강의에선그러는데 RaisedButton이 이제 사용이 안되는 것 같아서ElvatedButton을 사용했다. << https://seizemymoment.tistory.com/44 다른점!
 
 onPressed란?
+
+
+

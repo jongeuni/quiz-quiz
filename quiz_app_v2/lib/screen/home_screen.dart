@@ -1,7 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screen/choice.dart';
+import 'package:flutter_application_1/screen/quiz_main_screen.dart';
 import 'package:flutter_application_1/screen/mypage_screen.dart';
 
 class HomeScreen extends StatefulWidget {
