@@ -21,7 +21,12 @@ class _QuizMainPageState extends State<QuizMainPage> {
       body: Padding(
         padding: const EdgeInsets.all(30.0),
         child: Center(
+          
           child: DropdownButton(
+            elevation: 0,
+            borderRadius: BorderRadius.circular(10),
+            dropdownColor: const Color(0xffF7E3EF),
+            iconEnabledColor: const Color(0xffF7E3EF),
             value: _selectedValue,
             items: _valueList.map((value){
               return DropdownMenuItem(
@@ -35,8 +40,6 @@ class _QuizMainPageState extends State<QuizMainPage> {
             });
             
           },)
-    
-      //bottomNavigationBar: buildCurvedNavigationBar(),
     )));
   }
 }
