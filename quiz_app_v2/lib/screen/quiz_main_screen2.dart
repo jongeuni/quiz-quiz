@@ -26,24 +26,21 @@ class _QuizMainPageState2 extends State<QuizMainPage2> {
         Image.asset("images/sky.jpeg", width: 300),
         const Padding(padding: EdgeInsets.only(bottom: 10.0)),
         Container(
-          padding: const EdgeInsets.only(left:10.0, right: 50.0),
+          height: 39,
+          width: 110,
+          padding: const EdgeInsets.symmetric(horizontal: 12.0),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: const Color(0xffF7E3EF),
-            
-          ),
+            color: const Color(0xffF7E3EF),),
           child: DropdownButton(
+            isExpanded: true,
           style: const TextStyle(color: Color(0xff9481A1)),
-
           elevation: 0,
           underline: Container(),
             borderRadius: BorderRadius.circular(10),
             dropdownColor: const Color(0xffF7E3EF),
             iconEnabledColor: const Color(0xffffffff),
-            
-    
             value: _selectedValue,
-          
             items: _valueList.map((value){
               return DropdownMenuItem(
                 value: value,
@@ -56,11 +53,22 @@ class _QuizMainPageState2 extends State<QuizMainPage2> {
             
           },),
         ),
-        
-          ElevatedButton(
+        const Padding(padding: EdgeInsets.only(bottom: 10.0),),
+        Container(
+          width: 200,
+          height: 39,
+          child: ElevatedButton(
+            
             child: const Text('퀴즈 풀러 가기',style: TextStyle(color: Color(0xff9481A1)),),
-            style: ElevatedButton.styleFrom(primary: const Color(0xffF7E3EF)),
-            onPressed: (){},)
+            style: ElevatedButton.styleFrom(
+              primary: const Color(0xffF7E3EF), 
+              elevation: 0, 
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+            
+            onPressed: (){},),
+
+        )
+          
       ],),)
     );
   }
