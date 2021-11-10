@@ -2,15 +2,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screen/home_screen.dart';
+import 'package:flutter_application_1/screen/quiz/quiz_screen.dart';
 
 
-class QuizMainPage2 extends StatefulWidget {
-  const QuizMainPage2({Key? key}): super(key: key);
+class QuizMainPage extends StatefulWidget {
+  const QuizMainPage({Key? key}): super(key: key);
   @override
-  _QuizMainPageState2 createState() => _QuizMainPageState2();
+  _QuizMainPageState createState() => _QuizMainPageState();
 }
 
-class _QuizMainPageState2 extends State<QuizMainPage2> {
+class _QuizMainPageState extends State<QuizMainPage> {
   
   
   final _valueList = ['동물','노래','영화','기타'];
@@ -65,21 +66,13 @@ class _QuizMainPageState2 extends State<QuizMainPage2> {
               elevation: 0, 
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
             
-            onPressed: (){},),
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (_)=> QuizScreen(_selectedValue))); // selected value 전달
+            },),
 
         )
           
       ],),)
-    );
-  }
-}
-
-class _MainPageState extends  State<HomeScreen>{
-  final _valueList = [];
-  var _selectedValue = '기타';
-  @override 
-  Widget build(BuildContext context){
-    return Scaffold(
     );
   }
 }
