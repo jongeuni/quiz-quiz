@@ -1,8 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screen/quiz_main_screen.dart';
 import 'package:flutter_application_1/screen/mypage_screen.dart';
+import 'package:flutter_application_1/screen/quiz_main_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   //HomeScreen({Key key, this.title}):super(key:key);
@@ -14,7 +14,6 @@ class HomeScreen extends StatefulWidget {
 
 class _State extends State<HomeScreen> {
   
-
   void _onTap(int index){
     setState((){
       _currentIndex = index;
@@ -22,7 +21,7 @@ class _State extends State<HomeScreen> {
   }
 
   int _currentIndex = 0;
-  final List<Widget> _children = [QuizMainPage(),MyPage()];
+  final List<Widget> _children = [const QuizMainPage(),MyPage()];
 
 
   @override
