@@ -8,7 +8,7 @@ class Quiz{
 
   Quiz.fromMap(Map<String, dynamic> map)
     : title = map['title'],
-      contents = map['condidates'],
+      contents = map['contents'],
       answer = map['answer'],
       image = map['image'];
 
